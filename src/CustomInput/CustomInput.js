@@ -1,4 +1,4 @@
-import { View, TextInput } from "react-native";
+import { View, TextInput, TouchableOpacity, Text } from "react-native";
 import { useState } from "react";
 
 // Styles
@@ -9,12 +9,17 @@ const CustomInput = () => {
 
   return (
     <View style={styles.container}>
-      <TextInput
-        style={styles.input}
-        value={task}
-        onChangeText={setTask}
-        placeholder="Add..."
-      />
+      <View style={styles.input_container}>
+        <TextInput
+          style={styles.input}
+          value={task}
+          onChangeText={setTask}
+          placeholder="Type..."
+        />
+      </View>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.button_text}>Add</Text>
+      </TouchableOpacity>
     </View>
   );
 };

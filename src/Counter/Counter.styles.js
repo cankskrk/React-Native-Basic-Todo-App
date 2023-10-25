@@ -3,6 +3,7 @@ import { Dimensions, StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     marginTop: 10,
+    marginBottom: 15,
     height: 50,
     width: Dimensions.get("window").width,
     flexDirection: "row",
