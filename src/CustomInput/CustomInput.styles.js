@@ -21,13 +21,22 @@ export default StyleSheet.create({
     color: "#F5F7F8",
     fontFamily: "monospace",
   },
-  button: {
+  saveButtonActive: {
     flex: 1,
     margin: 15,
     alignItems: "center",
     padding: 10,
     width: Dimensions.get("window").width / 1.5,
     backgroundColor: "#F4CE14",
+    borderRadius: 8,
+  },
+  saveButton: {
+    flex: 1,
+    margin: 15,
+    alignItems: "center",
+    padding: 10,
+    width: Dimensions.get("window").width / 1.5,
+    backgroundColor: "#808080",
     borderRadius: 8,
   },
   button_text: {

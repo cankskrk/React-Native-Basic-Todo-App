@@ -7,6 +7,7 @@ export default StyleSheet.create({
     width: Dimensions.get("window").width / 1.2,
     padding: 10,
     borderRadius: 8,
+    marginBottom: 10,
   },
   text: {
     color: "#45474B",

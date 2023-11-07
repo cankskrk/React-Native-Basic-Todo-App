@@ -1,6 +1,12 @@
 [
     {
         "id": 1,
-        "task": "Fotoğraf çektir"
+        "task": "Fotoğraf çektir",
+        "isCompleted": true
+    },
+    {
+        "id": 2,
+        "task": "İspanyolca çalış",
+        "isCompleted": false
     }
 ]
