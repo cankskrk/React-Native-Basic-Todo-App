@@ -12,17 +12,17 @@ export default function App() {
   const [data, setData] = useState([
     {
       id: 1,
-      task: "Fotoğraf çek",
+      task: "Take some photos",
       isCompleted: false,
     },
     {
       id: 2,
-      task: "İspanyolca öğren",
+      task: "Study Spanish",
       isCompleted: false,
     },
     {
       id: 3,
-      task: "Baskları araştır",
+      task: "Drink water",
       isCompleted: true,
     },
   ]);
@@ -31,6 +31,7 @@ export default function App() {
   const onChangeText = (t) => {
     setText(t);
   };
+
   const onPress = () => {
     const newData = {
       id: data.length + 1,
@@ -42,15 +43,31 @@ export default function App() {
     setText("");
   };
 
-  const onPressList = () => {};
+  const onPressList = (taskID) => {
+    const taskIndex = data.findIndex((task) => task.id === taskID);
+    const newData = [...data];
+    newData[taskIndex] = {
+      ...newData[taskIndex],
+      isCompleted: !newData[taskIndex].isCompleted,
+    };
+
+    setData(newData);
+  };
+
+  // Number of TODO
+  const numberTODO = data.filter((d) => !d.isCompleted).length;
 
   return (
     <SafeAreaView style={styles.container}>
-      <Counter />
+      <Counter number={numberTODO} />
       <FlatList
         data={data}
         renderItem={({ item }) => (
-          <List task={item.task} onPress={onPressList} />
+          <List
+            task={item.task}
+            onPress={() => onPressList(item.id)}
+            done={item.isCompleted}
+          />
         )}
         keyExtractor={(item) => item.id}
       />
