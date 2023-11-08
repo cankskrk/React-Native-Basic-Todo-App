@@ -15,9 +15,8 @@ const CustomInput = (props) => {
         />
       </View>
       <TouchableOpacity
-        style={
-          props.value?.length > 0 ? styles.saveButtonActive : styles.saveButton
-        }
+        style={props.value !== "" ? styles.saveButtonActive : styles.saveButton}
+        disabled={props.value === "" ? true : false}
         onPress={props.onPress}
       >
         <Text style={styles.button_text}>Add</Text>

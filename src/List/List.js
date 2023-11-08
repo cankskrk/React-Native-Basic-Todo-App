@@ -1,13 +1,17 @@
-import { View, Text } from "react-native";
+import { TouchableOpacity, Text } from "react-native";
 
 // Styles
 import styles from "./List.styles";
 
-const List = ({ tasks }) => {
+const List = (props) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{tasks.task}</Text>
-    </View>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={props.onPress}
+      onLongPress={props.onLongPress}
+    >
+      <Text style={styles.text}>{props.task}</Text>
+    </TouchableOpacity>
   );
 };
 
